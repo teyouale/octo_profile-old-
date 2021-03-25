@@ -1,8 +1,11 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Container, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 function InputComponent(props) {
   const [inputValue, setInputValue] = useState("");
+
+  let history = useHistory();
 
   const handleChange = (event) => {
     setInputValue([event.target.value]);
@@ -16,6 +19,7 @@ function InputComponent(props) {
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmission();
+          history.push(`/${inputValue[0]}`);
         }}
       >
         <Form.Group>
