@@ -1,12 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Get } from "react-axios";
+import UserData from "./userData";
+import Charts from "./Charts";
 
 const UserDetail = (props) => {
   return (
     <div>
-      <h1>Welcome To Your Github Profile </h1>
-      <h2>{useParams().userName}</h2>
       <Get url={`https://api.github.com/users/${useParams().userName}`}>
         {(error, response, isLoading, makeRequest, axios) => {
           if (error) {
@@ -25,8 +25,8 @@ const UserDetail = (props) => {
           } else if (response !== null) {
             return (
               <div>
-                {console.log(response)}
-                {response.data.name}{" "}
+                <UserData userData={response.data} />
+                <Charts userData={response.data} />
                 <button
                   onClick={() => makeRequest({ params: { refresh: true } })}
                 >
