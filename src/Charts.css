@@ -1,0 +1,15 @@
+.charts{
+    padding-top: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    justify-content: space-between;
+}
+.cardItem{
+    padding: 32px;
+    background: rgba(108, 117, 125, 0.16);
+    border-radius: 0.25rem;
+    box-shadow: 0 5px 30px -15px rgb(191, 18, 18);
+}

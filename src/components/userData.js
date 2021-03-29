@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Container } from "react-bootstrap";
+import Charts from "./Charts";
 import "../userData.css";
 const UserData = ({ userData }) => (
   <Container>
@@ -33,6 +34,7 @@ const UserData = ({ userData }) => (
         </div>
       </div>
     </Row>
+    <Charts />
   </Container>
 );
 

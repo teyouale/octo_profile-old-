@@ -26,7 +26,6 @@ const UserDetail = (props) => {
             return (
               <div>
                 <UserData userData={response.data} />
-                <Charts userData={response.data} />
                 <button
                   onClick={() => makeRequest({ params: { refresh: true } })}
                 >
